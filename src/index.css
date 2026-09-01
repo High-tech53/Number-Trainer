@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ */
+/* Design tokens — single source of truth for the Number Trainer      */
+/* wireframe palette + type. Exposed as Tailwind utilities, e.g.:     */
+/*   bg-surface  border-line  text-muted  text-fg  bg-accent          */
+/*   text-accent bg-accent-soft bg-success text-success ...           */
+/*   font-sans   font-mono                                            */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-sans: 'DM Sans', system-ui, sans-serif;
+  --font-mono: 'DM Mono', monospace;
+
+  --color-surface: #F5F5F5;
+  --color-line: #E0E0E0;
+  --color-muted: #9E9E9E;
+  --color-fg: #333333;
+  --color-white: #FFFFFF;
+
+  --color-accent: #2D6CDF;
+  --color-accent-hover: #1A50B8;
+  --color-accent-soft: #E3EEFF;
+
+  --color-success: #2A7A2A;
+  --color-success-soft: #E8F5E9;
+  --color-success-text: #1A5C1A;
+
+  --color-danger: #C0392B;
+  --color-danger-soft: #FFEBEE;
+
+  --color-warning: #E8750A;
+  --color-warning-soft: #FFF3E0;
+  --color-warning-text: #804600;
+
+  --color-sidebar: #1E2332;
+}
+
+@keyframes number-appear {
+  from { opacity: 0; transform: scale(0.91); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.decimal-number-appear {
+  animation: number-appear 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  @apply font-sans bg-surface text-fg;
+}
+
+* {
+  scrollbar-width: none;
+  box-sizing: border-box;
+}
+*::-webkit-scrollbar {
+  display: none;
+}
